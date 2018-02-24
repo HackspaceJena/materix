@@ -6,7 +6,6 @@
 #define NUM_LEDS    120
 
 #define BRIGHTNESS  200
-#define FRAMES_PER_SECOND 120
 
 const int matrix[12][10] = {
       { 76, 75, 68, 67, 60, 59, 52, 51, 44, 43 },
@@ -71,22 +70,18 @@ void pixelfur(int z)
       for(int k = 0; k < 10; k++){
         leds[matrix[i][k]] = colormap[i][k];
       }
-    }
-    
+    }    
     FastLED.show(); // display this frame
-    FastLED.delay(1000 / FRAMES_PER_SECOND);
   break;
   case 2:
     leds[matrix[4][2]] = leds[matrix[4][7]] =  bg;
     leds[matrix[10][4]] = leds[matrix[10][5]] = rr;
     FastLED.show(); // display this frame
-    FastLED.delay(1000 / FRAMES_PER_SECOND);
   break;
   case 3:
     leds[matrix[5][2]] = leds[matrix[5][7]] = bg;
     leds[matrix[11][4]] = leds[matrix[11][5]] = rr;
     FastLED.show(); // display this frame
-    FastLED.delay(1000 / FRAMES_PER_SECOND);
   break;
   };
  
